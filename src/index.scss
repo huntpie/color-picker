@@ -31,11 +31,13 @@ div.frame {
   margin: auto;
 }
 
-div.color-cirle {
-  height: 100px;
-  width: 100px;
-  color: green;
+div.color-circle {
+  height: 50px;
+  width: 50px;
+  //background-color: green;
   border-radius: 50%;
+  margin: auto;
+  margin-top: 1.5rem;
 }
 
 div.sliders {

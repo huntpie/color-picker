@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export class App extends Component {
   state = {
-    hue: 0,
+    hue: Math.floor(Math.random()* 360),
     maxHue: 360,
-    saturation: 0,
+    saturation: Math.floor(Math.random() * 100),
     maxSaturation: 100,
-    lightness: 0,
+    lightness: Math.floor(Math.random() * 100),
     maxLightness: 100
 
   }
@@ -64,7 +64,11 @@ export class App extends Component {
     })
   }
 
+  
+
   render() {
+    const newBackgroundColor = 'hsl(60,0%,0%)'
+    const newStyle = { backgroundColor: newBackgroundColor}
     return (
       <body>
         <header>
@@ -72,13 +76,13 @@ export class App extends Component {
         </header>
         <div className="colorpicker">
           <div className="frame">
-            <div className="color-circle">
+            <div className="color-circle" style={newStyle}>
             </div>
             <div className="sliders">
               <input className="hueslider" type="range" max={this.state.maxHue}
-              onInput={this.updateHue} value={this.state.hue}
+              onInput={this.updateHue} value={this.state.hue} style={newStyle}
               ></input>
-              <input className="huevalue" type="text" onInput={this.updateHue} ></input>
+              <input className="huevalue" type="text" onInput={this.updateHue}></input>
               <input className="rgbslider" type="range" max={this.state.maxSaturation}
               onInput={this.updateSaturation} value={this.state.saturation}></input>
               <input className="rgbvalue" type="text" onInput={this.updateSaturation} ></input>
@@ -88,10 +92,7 @@ export class App extends Component {
             </div>
           </div>
           <div className="color-inputs">
-            <input className="hex" type="text"></input>
-            <input className="rgb" type="text"></input>
             <input className="hsl" type="text"></input>
-
           </div>
           
           <button className="random-button" onClick={this.generateRandomNumber}>Random Color</button>
