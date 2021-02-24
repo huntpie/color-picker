@@ -67,7 +67,7 @@ export class App extends Component {
   
 
   render() {
-    const newBackgroundColor = 'hsl(60,0%,0%)'
+    const newBackgroundColor = `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`
     const newStyle = { backgroundColor: newBackgroundColor}
     return (
       <body>
@@ -85,14 +85,14 @@ export class App extends Component {
               <input className="huevalue" type="text" onInput={this.updateHue}></input>
               <input className="rgbslider" type="range" max={this.state.maxSaturation}
               onInput={this.updateSaturation} value={this.state.saturation}></input>
-              <input className="rgbvalue" type="text" onInput={this.updateSaturation} ></input>
+              <input className="rgbvalue" type="text" onInput={this.updateSaturation}></input>
               <input className="hsl" type="range" max={this.state.maxLightness}
               onInput={this.updateLightness} value={this.state.lightness}></input>
               <input className="hslvalue" type="text" onInput={this.updateLightness} ></input>
             </div>
           </div>
           <div className="color-inputs">
-            <input className="hsl" type="text"></input>
+            <div className="hsl">hsl ({this.state.hue}, {this.state.saturation}%, {this.state.lightness}%)</div> 
           </div>
           
           <button className="random-button" onClick={this.generateRandomNumber}>Random Color</button>

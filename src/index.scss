@@ -48,10 +48,22 @@ div.sliders {
   margin-top: 1.5rem;
 }
 
+input[type='range'] {
+  color: green;
+}
+
 div.color-inputs {
   text-align: center;
   display: center;
   margin-top: 0.5rem;
+}
+
+div.hsl {
+  border-style: solid;
+  padding: 0.5rem;
+  border-color: black;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
 button.random-button {
